@@ -1,3 +1,14 @@
+Got it. That underline is caused by a general style rule for all links. To remove it just from the navigation bar buttons, you need to make a small change to your CSS.
+
+You just need to add one line: **`text-decoration: none;`** to the `.nav-links a:hover` style.
+
+Here is the complete, updated code with that fix included.
+
+-----
+
+## Complete Code (Underline Fixed)
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -533,4 +544,5 @@
         });
     </script>
 </body>
-</html>h
+</html>
+```
