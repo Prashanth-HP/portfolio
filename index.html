@@ -1,14 +1,3 @@
-Got it. That underline is caused by a general style rule for all links. To remove it just from the navigation bar buttons, you need to make a small change to your CSS.
-
-You just need to add one line: **`text-decoration: none;`** to the `.nav-links a:hover` style.
-
-Here is the complete, updated code with that fix included.
-
------
-
-## Complete Code (Underline Fixed)
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,8 +73,7 @@ Here is the complete, updated code with that fix included.
 
         .nav-links a:hover, .nav-links a.active {
             background-color: var(--primaryColor);
-            color: var(--backgroundColor);
-            /* ✨ FIX: Added this line to remove the underline on hover */
+            color: var(--backgroundColor); /* Text becomes background color on hover */
             text-decoration: none;
         }
         
@@ -165,6 +153,21 @@ Here is the complete, updated code with that fix included.
             text-align: left;
         }
         
+        /* ✨ NEW styling for the professional summary list */
+        .expander ul {
+            padding-left: 0;
+            list-style: none;
+        }
+        .expander ul li {
+            margin-bottom: 12px;
+            padding-left: 1.4em;
+            text-indent: -1.4em;
+        }
+        .expander ul li strong {
+            color: var(--primaryColor);
+        }
+
+
         /* Contact Box */
         .contact-box {
             background-color: var(--secondaryBackgroundColor);
@@ -340,29 +343,28 @@ Here is the complete, updated code with that fix included.
                     <img src="my photo.jpeg" alt="Hari Prashanth R" class="profile-pic">
                 </div>
                 <div class="home-col2">
-                    <h1>👋 Hari Prashanth R</h1>
-                    <p><strong>Ex-Intern @ Infosys SpringBoard, Edunet Foundation</strong></p>
-                    <p>🎯 <strong>Aspiring Software Engineer | Java & Cloud Enthusiast</strong></p>
+                    <h1>I'm Hari Prashanth</h1>
+                    <p><strong>Software Engineering Student | Java & Cloud Enthusiast</strong></p>
                     <p>
-                        I'm a <strong>motivated and detail-oriented engineering student</strong> passionate about
-                        building scalable software systems, solving problems with code,
-                        and exploring <strong>☁ Cloud Technologies (AWS, Azure)</strong>.
-                    </p>
-                    <p>
-                       My goal is to become a <strong>Solution Architect / Tech Leader</strong> who designs and leads scalable cloud-based systems using <strong>Java & AWS</strong>.
+                        A detail-oriented engineering student passionate about building scalable, efficient software solutions and solving complex problems with code. 
+                        My ambition is to grow into a technical leadership role, designing and architecting robust, cloud-native systems using Java and AWS.
                     </p>
                 </div>
-            </div>
+                </div>
             <div class="expander">
-                <h3>📌 About Me</h3>
-                <p>
-                    - 🎓 <strong>Education</strong>: Currently pursuing Engineering with a focus on <strong>Computer Science & Software Development</strong>. <br>
-                    - 💼 <strong>Experience</strong>: Completed an <strong>Internship at Infosys Springboard</strong> where I worked on real-world projects and improved my problem-solving skills. <br>
-                    - 🔭 <strong>Interests</strong>: Backend Development (Java, Spring Boot, Node.js), Cloud Computing (AWS, Azure), and Data Analysis. <br>
-                    - 🌱 <strong>Currently Learning</strong>: AWS Cloud (Java-oriented), React, and Spring Boot. <br>
-                    - 🛠️ <strong>Strengths</strong>: Quick learner, good team player, adaptable to new technologies.
-                </p>
-            </div>
+                <h3>Professional Summary</h3>
+                <ul>
+                    <li>
+                        <strong>🎓 Education:</strong> Pursuing a B.Tech in Artificial Intelligence & Machine Learning with a focus on core software development principles.
+                    </li>
+                    <li>
+                        <strong>💼 Experience:</strong> Gained practical problem-solving skills through virtual internships with Infosys Springboard and Edunet Foundation, working on data-centric and deep learning projects.
+                    </li>
+                    <li>
+                        <strong>🔭 Key Interests:</strong> Cloud Computing (AWS, Azure), Java Devlopment
+                    </li>
+                </ul>
+                </div>
         </section>
 
         <section id="experience" class="page-section">
@@ -418,28 +420,16 @@ Here is the complete, updated code with that fix included.
         <section id="projects" class="page-section">
             <h2>🚀 My Projects</h2>
             <div class="project-item">
-                <h3>🌎 India's Air Quality Webpage</h3>
+                <h3>🌎 India's Air Quality Webpage embedded</h3>
                 <p><strong>Description</strong>: Analyzed air quality in Indian cities, providing insights into pollution levels, trends, and potential environmental impacts.</p>
                 <p><strong>Tools</strong>: Python, Excel, PowerBI, Streamlit</p>
                 <a href="https://github.com/Prashanth-HP/Air-Quality-India" target="_blank">GitHub Repository</a>
-            </div>
-            <div class="project-item">
-                <h3>🎬 Netflix EDA</h3>
-                <p><strong>Description</strong>: Explored Netflix data to analyze content trends and user preferences in 2021.</p>
-                <p><strong>Tools</strong>: Python, Excel, PowerBI</p>
-                <a href="https://github.com/Prashanth-HP/Data_Analysis/tree/main/Netflex%20Anlaysis" target="_blank">GitHub Repository</a>
             </div>
             <div class="project-item">
                 <h3>🍴 Food Delivery System</h3>
                 <p><strong>Description</strong>: A full-stack food ordering system using Angular, Node.js (Express), and MySQL. Focused on modular backend design and efficient data handling.</p>
                 <p><strong>Tools</strong>: Angular, Node.js (Express), MySQL</p>
                 <a href="https://github.com/Prashanth-HP/Food_Delivery" target="_blank">GitHub Repository</a>
-            </div>
-             <div class="project-item">
-                <h3>📚 Student Management System</h3>
-                <p><strong>Description</strong>: A console-based Java application to manage student records, built to strengthen OOP concepts.</p>
-                <p><strong>Tools</strong>: Java (Core OOPs, Arrays)</p>
-                <a href="https://github.com/Prashanth-HP/Java-Project" target="_blank">GitHub Repository</a>
             </div>
             <div class="project-item">
                 <h3>🔥 Forest Fire Detection using Deep Learning (CNN)</h3>
@@ -545,4 +535,3 @@ Here is the complete, updated code with that fix included.
     </script>
 </body>
 </html>
-```
