@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Prashanth R - Portfolio</title>
+    <style>
+        :root {
+            --primaryColor: #23F530;
+            --backgroundColor: #121212;
+            --secondaryBackgroundColor: #1E1E1E;
+            --textColor: #EAEAEA;
+            --font: 'Sans-serif', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        /* General Body Styles */
+        body {
+            font-family: var(--font);
+            background-color: var(--backgroundColor);
+            color: var(--textColor);
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: rgba(30, 30, 30, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .nav-logo {
+            color: var(--primaryColor);
+            font-size: 1.8em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: var(--textColor);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background-color: var(--primaryColor);
+            color: var(--backgroundColor);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--textColor);
+        }
+
+
+        /* Main Content Container */
+        .content {
+            padding: 100px 20px 20px; /* Adjusted top padding */
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        /* Section Styling */
+        .page-section {
+            margin-bottom: 60px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Headings */
+        h1, h2 {
+            color: var(--primaryColor);
+            border-bottom: 2px solid var(--primaryColor);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+        }
+         h2 {
+            font-size: 2em;
+        }
+        h3 {
+            color: var(--primaryColor);
+        }
+
+        /* Home Section Layout */
+        .home-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .home-col1 {
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .home-col2 {
+            flex: 3;
+        }
+
+        .profile-pic {
+            width: 100%;
+            border-radius: 50%;
+            border: 4px solid var(--primaryColor);
+            box-shadow: 0 0 20px rgba(35, 245, 48, 0.5);
+        }
+        
+        /* Expander/About Me Box */
+        .expander{
+            background: var(--secondaryBackgroundColor);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: left;
+        }
+        
+        /* Contact Box */
+        .contact-box {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 10px;
+            border-bottom: none;
+        }
+
+        .button-wrapper {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .contact-button {
+            background-color: #262626;
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #555;
+            text-decoration: none !important;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .contact-button:hover {
+            background-color: var(--primaryColor);
+            color: var(--backgroundColor) !important;
+            border-color: var(--primaryColor);
+            transform: translateY(-3px);
+        }
+        
+        .download-btn {
+            margin-top: 15px;
+            background-color: var(--primaryColor);
+            color: var(--backgroundColor) !important;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out;
+        }
+        .download-btn:hover {
+             box-shadow: 0 0 10px rgba(35, 245, 48, 0.7);
+             transform: translateY(-3px);
+        }
+
+        /* Item Cards */
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 20px;
+            background: var(--secondaryBackgroundColor);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Certification Grid */
+        .cert-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .cert-item {
+            border-left: 4px solid var(--primaryColor);
+            padding: 20px;
+            background-color: var(--secondaryBackgroundColor);
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .cert-item:hover {
+            transform: translateY(-5px);
+        }
+        .cert-item button{
+             background:var(--primaryColor);
+             color:var(--backgroundColor);
+             padding:8px 15px;
+             border:none;
+             border-radius:5px;
+             cursor: pointer;
+             font-weight: bold;
+             margin-top: 10px;
+        }
+        
+        /* Skills Layout */
+        .skills-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .skills-col {
+            width: 100%;
+        }
+        .stars {
+          --percent: calc(var(--rating) / 5 * 100%);
+          display: inline-block;
+          font-size: 20px;
+          font-family: Times, 'Times New Roman', serif;
+          line-height: 1;
+        }
+        .stars::before {
+          content: '★★★★★';
+          letter-spacing: 3px;
+          background: linear-gradient(90deg, gold var(--percent), #444 var(--percent));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        
+        /* Links */
+        a {
+            color: var(--primaryColor);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 820px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 75px; /* Height of the navbar */
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--secondaryBackgroundColor);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 1rem 0;
+                border-bottom: 1px solid #333;
+            }
+             .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .content {
+                padding: 100px 40px 40px;
+            }
+            .home-layout {
+                flex-direction: row;
+                text-align: left;
+            }
+            .skills-layout {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">HP</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certification">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content">
+        <!-- HOME SECTION -->
+        <section id="home" class="page-section">
+            <div class="home-layout">
+                <div class="home-col1">
+                    <!-- I've hosted the image for you. You can replace this link if you prefer. -->
+                    <img src="my photo.jpeg" alt="Hari Prashanth R" class="profile-pic">
+                </div>
+                <div class="home-col2">
+                    <h1>👋 Hari Prashanth R</h1>
+                    <p><strong>Ex-Intern @ Infosys SpringBoard, Edunet Foundation</strong></p>
+                    <p>🎯 <strong>Aspiring Software Engineer | Java & Cloud Enthusiast</strong></p>
+                    <p>
+                        I'm a <strong>motivated and detail-oriented engineering student</strong> passionate about
+                        building scalable software systems, solving problems with code,
+                        and exploring <strong>☁ Cloud Technologies (AWS, Azure)</strong>.
+                    </p>
+                    <p>
+                       My goal is to become a <strong>Solution Architect / Tech Leader</strong> who designs and leads scalable cloud-based systems using <strong>Java & AWS</strong>.
+                    </p>
+                </div>
+            </div>
+            <div class="expander">
+                <h3>📌 About Me</h3>
+                <p>
+                    - 🎓 <strong>Education</strong>: Currently pursuing Engineering with a focus on <strong>Computer Science & Software Development</strong>. <br>
+                    - 💼 <strong>Experience</strong>: Completed an <strong>Internship at Infosys Springboard</strong> where I worked on real-world projects and improved my problem-solving skills. <br>
+                    - 🔭 <strong>Interests</strong>: Backend Development (Java, Spring Boot, Node.js), Cloud Computing (AWS, Azure), and Data Analysis. <br>
+                    - 🌱 <strong>Currently Learning</strong>: AWS Cloud (Java-oriented), React, and Spring Boot. <br>
+                    - 🛠️ <strong>Strengths</strong>: Quick learner, good team player, adaptable to new technologies.
+                </p>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="page-section">
+            <h2>💼 Internship Experience</h2>
+            <div class="experience-item">
+                <h3>Green AI Intern (Virtual) - Edunet Foundation</h3>
+                <p>📅 <strong>Duration</strong>: Apr 2025 - Apr 2025</p>
+                <p>📌 <strong>Project</strong>: Forest Fire Detection Using Deep learning</p>
+                <p><strong>🔹 Tasks:</strong></p>
+                <ul>
+                    <li>Built deep learning models for forest fire detection using CNNs.</li>
+                    <li>Focused on dataset preprocessing and PyTorch implementation.</li>
+                </ul>
+                <p><strong>🛠️ Tools Used:</strong> Python, Google Colab, MS Excel</p>
+            </div>
+            <div class="experience-item">
+                <h3>Data Visualization Internship (Virtual) - Infosys SpringBoard</h3>
+                <p>📅 <strong>Duration</strong>: Oct 2024 - Dec 2024</p>
+                <p>📌 <strong>Project</strong>: Air Quality Index (India)</p>
+                <p><strong>🔹 Tasks:</strong></p>
+                <ul>
+                    <li>Data Collection, Preprocessing, and Transformation.</li>
+                    <li>Created Power BI dashboards using cleaned datasets.</li>
+                    <li>Integrated Streamlit with a functional Power BI dashboard.</li>
+                </ul>
+                <p><strong>🛠️ Tools Used:</strong> Python, Streamlit, VS Code, Power BI, MS Excel, MS Word</p>
+                <a href="https://drive.google.com/file/d/1Hyf3EEVSY_MnMRq4cF9owG_18zD_hFqK/view?usp=drive_link" target="_blank">View Certificate</a>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="page-section">
+            <h2>🎓 My Education</h2>
+            <div class="education-item">
+                <h3>🎓 <strong>B.Tech in Artificial Intelligence & Machine Learning</strong></h3>
+                <p><strong>Institution</strong>: K Ramakrishnan College of Engineering, Tiruchirappalli</p>
+                <p><strong>Percentage</strong>: 75.5%</p>
+                <p>📅 <strong>Duration</strong>: 2022 - Present</p>
+            </div>
+            <div class="education-item">
+                <h3>🏫 <strong>12th Grade (PCM)</strong></h3>
+                <p><strong>Institution</strong>: Sacred Heart Higher Secondary School, Tiruchirappalli</p>
+                <p><strong>Percentage</strong>: 72%</p>
+                <p>📅 <strong>Duration</strong>: 2021 - 2022</p>
+            </div>
+            <div class="education-item">
+                <h3>🏫 <strong>10th Grade</strong></h3>
+                <p><strong>Institution</strong>: St Arnold's Matriculation School, Tiruchirappalli</p>
+                <p><strong>Percentage</strong>: 70%</p>
+                <p>📅 <strong>Duration</strong>: 2019 - 2020</p>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="page-section">
+            <h2>🚀 My Projects</h2>
+            <div class="project-item">
+                <h3>🌎 India's Air Quality Webpage</h3>
+                <p><strong>Description</strong>: Analyzed air quality in Indian cities, providing insights into pollution levels, trends, and potential environmental impacts.</p>
+                <p><strong>Tools</strong>: Python, Excel, PowerBI, Streamlit</p>
+                <a href="https://github.com/Prashanth-HP/Air-Quality-India" target="_blank">GitHub Repository</a>
+            </div>
+            <div class="project-item">
+                <h3>🎬 Netflix EDA</h3>
+                <p><strong>Description</strong>: Explored Netflix data to analyze content trends and user preferences in 2021.</p>
+                <p><strong>Tools</strong>: Python, Excel, PowerBI</p>
+                <a href="https://github.com/Prashanth-HP/Data_Analysis/tree/main/Netflex%20Anlaysis" target="_blank">GitHub Repository</a>
+            </div>
+            <div class="project-item">
+                <h3>🍴 Food Delivery System</h3>
+                <p><strong>Description</strong>: A full-stack food ordering system using Angular, Node.js (Express), and MySQL. Focused on modular backend design and efficient data handling.</p>
+                <p><strong>Tools</strong>: Angular, Node.js (Express), MySQL</p>
+                <a href="https://github.com/Prashanth-HP/Food_Delivery" target="_blank">GitHub Repository</a>
+            </div>
+             <div class="project-item">
+                <h3>📚 Student Management System</h3>
+                <p><strong>Description</strong>: A console-based Java application to manage student records, built to strengthen OOP concepts.</p>
+                <p><strong>Tools</strong>: Java (Core OOPs, Arrays)</p>
+                <a href="https://github.com/Prashanth-HP/Java-Project" target="_blank">GitHub Repository</a>
+            </div>
+            <div class="project-item">
+                <h3>🔥 Forest Fire Detection using Deep Learning (CNN)</h3>
+                <p><strong>Description</strong>: Designed a deep learning model to classify and detect forest fire images using Convolutional Neural Networks (CNN).</p>
+                <p><strong>Tools</strong>: Python, TensorFlow, Keras, NumPy, Matplotlib</p>
+                <a href="https://github.com/Prashanth-HP/Forest_Fire_Detection" target="_blank">GitHub Repository</a>
+            </div>
+        </section>
+        
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="page-section">
+            <h2>🚀 My Skills & Tools</h2>
+            <div class="skills-layout">
+                <div class="skills-col">
+                    <h3>💻 Technical Skills</h3>
+                    <p><strong>AWS Cloud</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                    <p><strong>Azure Cloud Basics</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                    <p><strong>Data Analysis</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                    <p><strong>Python</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                    <p><strong>SQL</strong>: <span class="stars" style="--rating: 2;"></span></p>
+                    <p><strong>Java Basics</strong>: <span class="stars" style="--rating: 2;"></span></p>
+                    <p><strong>Data Visualization</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                </div>
+                <div class="skills-col">
+                    <h3>🧠 Soft Skills</h3>
+                    <p><strong>Public Speaking</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                    <p><strong>Presentation Skills</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                    <p><strong>Teamwork & Collaboration</strong>: <span class="stars" style="--rating: 4;"></span></p>
+                    <p><strong>Time Management</strong>: <span class="stars" style="--rating: 5;"></span></p>
+                    <p><strong>Adaptability</strong>: <span class="stars" style="--rating: 4;"></span></p>
+                </div>
+                <div class="skills-col">
+                    <h3>🛠️ Tools & Platforms</h3>
+                    <p><strong>Visual Studio Code</strong>: <span class="stars" style="--rating: 4;"></span></p>
+                    <p><strong>Power BI</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                    <p><strong>Google Colab & Jupyter</strong>: <span class="stars" style="--rating: 4;"></span></p>
+                    <p><strong>Azure Cloud</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                    <p><strong>Microsoft Office</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                    <p><strong>GitHub</strong>: <span class="stars" style="--rating: 3;"></span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certification" class="page-section">
+            <h2>🏆 Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item"><h5>🏅 Programming Using Java</h5><p><strong>Platform:</strong> Infosys Springboard</p></div>
+                <div class="cert-item"><h5>🏅 Database Management System</h5><p><strong>Platform:</strong> Infosys Springboard</p></div>
+                <div class="cert-item"><h5>🏅 AZURE FUNDAMENTALS</h5><p><strong>Platform:</strong> Microsoft</p><a href="https://drive.google.com/file/d/1HrZNXlYaE-GHcteOrHs_I1dLCBnRyGME/view?usp=drive_link" target="_blank"><button>View Certificate</button></a></div>
+                <div class="cert-item"><h5>☁️ AWS CLOUD CERTIFICATE</h5><p><strong>Platform:</strong> AWS</p><a href="https://drive.google.com/file/d/14Q6MQVOk8jVO4wEApR1_60rE8E9vrFc-/view?usp=drive_link" target="_blank"><button>View Certificate</button></a></div>
+                <div class="cert-item"><h5>☁ CLOUD COMPUTING</h5><p><strong>Platform:</strong> NPTEL</p><a href="https://drive.google.com/file/d/1cpXPdu7ZSJmhRZHYrmCVcRDIvCW422fF/view?usp=drive_link" target="_blank"><button>View Certificate</button></a></div>
+                <div class="cert-item"><h5>📊 EXCEL BASICS FOR DATA ANALYSIS</h5><p><strong>Platform:</strong> Coursera</p><a href="https://drive.google.com/file/d/1g5y3CVLdNbSzW-4CAA8UgEytt67eg1hk/view?usp=drive_link" target="_blank"><button>View Certificate</button></a></div>
+                <div class="cert-item"><h5>🤖 OCI 2024 GENERATIVE AI PROFESSIONAL CERTIFICATION</h5><p><strong>Platform:</strong> Oracle University</p><a href="https://drive.google.com/file/d/10ordz2WSyEHsWekGWS3aRi4G-ed9oGvw/view?usp=drive_link" target="_blank"><button>View Certificate</button></a></div>
+                <div class="cert-item"><h5>📈 DATA SCIENCE</h5><p><strong>Platform:</strong> PrepInsta</p><a href="https://drive.google.com/file/d/1BoxkoTnr4HVaJegKVrYFqwUir_3viy2f/view?usp=drive_link" target="_blank"><button>View Certificate</button></a></div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="page-section">
+             <div class="contact-box">
+                <div class="contact-title">📞 Get In Touch</div>
+                <div class="button-wrapper">
+                    <a href="mailto:gowthamhari2103@gmail.com" class="contact-button">📧 Email Me</a>
+                    <a href="https://www.linkedin.com/in/hariprashanth--r/" target="_blank" class="contact-button">💼 LinkedIn</a>
+                    <a href="https://github.com/Prashanth-HP" target="_blank" class="contact-button">🖥️ GitHub</a>
+                     <a href="https://www.geeksforgeeks.org/user/gowthamh2eda/" target="_blank" class="contact-button">💻 GFG</a>
+                </div>
+                 <!-- Make sure the 'data/Hari_Prashanth_Resume.pdf' path is correct -->
+                <a href="data/Hari_Prashanth_Resume.pdf" download="Hari_Prashanth_Resume.pdf" class="download-btn">📥 Download Resume</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+        }));
+
+        // Active link on scroll
+        const sections = document.querySelectorAll(".page-section");
+        const navLi = document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+            let current = "home"; // Default to home
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) { // Adjust offset as needed
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach(a => {
+                a.classList.remove("active");
+                if (a.getAttribute("href").includes(current)) {
+                    a.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
