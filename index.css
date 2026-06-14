@@ -1,8 +1,8 @@
 :root {
-    --primaryColor: #23F530;
-    --backgroundColor: #121212;
+    --primaryColor: #3B82F6;
+    --backgroundColor: #0F172A;
     --secondaryBackgroundColor: #1E1E1E;
-    --textColor: #EAEAEA;
+    --textColor: #F8FAFC;
     --font: 'Sans-serif';
 }
 
@@ -60,12 +60,16 @@ body {
     display: block;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--primaryColor);
 }
-h1{
+
+h1 {
     font-size: 2.5em;
 }
+
 hr {
     border: 0;
     height: 1px;
@@ -91,7 +95,8 @@ hr {
     width: 100%;
     border-radius: 10px;
 }
-.expander{
+
+.expander {
     background: var(--secondaryBackgroundColor);
     padding: 15px;
     border-radius: 5px;
@@ -101,7 +106,7 @@ hr {
     background-color: #1e1e1e;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 0 8px rgba(0,255,100,0.1);
+    box-shadow: 0 0 8px rgba(0, 255, 100, 0.1);
 }
 
 .contact-title {
@@ -146,29 +151,40 @@ hr {
     display: inline-block;
     font-weight: bold;
 }
-.experience-item, .education-item, .project-item {
+
+.experience-item,
+.education-item,
+.project-item {
     margin-bottom: 20px;
 }
-.cert-grid{
+
+.cert-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
 }
+
 .cert-item {
     border-left: 4px solid #4caf50;
     padding: 10px 15px;
     margin-bottom: 15px;
     background-color: #121212;
     border-radius: 5px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.cert-item button{
-     background:#4caf50;
-     color:white;
-     padding:5px 10px;
-     border:none;
-     border-radius:5px;
-     cursor: pointer;
+
+.cert-item button {
+    background: #4caf50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
 .skills-layout {
     display: flex;
     justify-content: space-between;
@@ -177,20 +193,23 @@ hr {
 .skills-col {
     width: 32%;
 }
+
 .stars {
-  --percent: calc(var(--rating) / 5 * 100%);
-  display: inline-block;
-  font-size: 20px;
-  font-family: Times;
-  line-height: 1;
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: inline-block;
+    font-size: 20px;
+    font-family: Times;
+    line-height: 1;
 }
+
 .stars::before {
-  content: '★★★★★';
-  letter-spacing: 3px;
-  background: linear-gradient(90deg, gold var(--percent), #d3d3d3 var(--percent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, gold var(--percent), #d3d3d3 var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 a {
     color: var(--primaryColor);
 }
