@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,14 @@
     <style>
         /* Aqua Blue Dark Theme */
         :root {
-            --primaryColor: #00BCD4;           /* Aqua Blue */
-            --backgroundColor: #1A2634;         /* Very Dark Blue-Gray */
-            --secondaryBackgroundColor: #283747; /* Darker Blue-Gray */
-            --textColor: #E0F2F7;              /* Light Cyan-Gray */
+            --primaryColor: #00BCD4;
+            /* Aqua Blue */
+            --backgroundColor: #1A2634;
+            /* Very Dark Blue-Gray */
+            --secondaryBackgroundColor: #283747;
+            /* Darker Blue-Gray */
+            --textColor: #E0F2F7;
+            /* Light Cyan-Gray */
             --font: 'Sans-serif', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
@@ -27,7 +32,8 @@
 
         /* Navbar Styles */
         .navbar {
-            background-color: rgba(26, 38, 52, 0.85); /* Slightly transparent dark blue */
+            background-color: rgba(26, 38, 52, 0.85);
+            /* Slightly transparent dark blue */
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #364B60;
             position: fixed;
@@ -35,7 +41,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .nav-container {
@@ -71,12 +77,14 @@
             transition: all 0.3s ease;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             background-color: var(--primaryColor);
-            color: var(--backgroundColor); /* Text becomes background color on hover */
+            color: var(--backgroundColor);
+            /* Text becomes background color on hover */
             text-decoration: none;
         }
-        
+
         .hamburger {
             display: none;
             cursor: pointer;
@@ -108,21 +116,39 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         /* Headings */
-        h1, h2 {
+        h1,
+        h2 {
             color: var(--primaryColor);
             border-bottom: 2px solid var(--primaryColor);
             padding-bottom: 10px;
             margin-top: 0;
             margin-bottom: 30px;
         }
-        h1 { font-size: 2.5em; text-align: center; }
-        h2 { font-size: 2em; }
-        h3 { color: var(--primaryColor); }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        h3 {
+            color: var(--primaryColor);
+        }
 
         /* Home Section Layout */
         .home-layout {
@@ -134,35 +160,44 @@
             margin-bottom: 40px;
         }
 
-        .home-col1 { flex: 1; max-width: 200px; }
-        .home-col2 { flex: 3; }
+        .home-col1 {
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .home-col2 {
+            flex: 3;
+        }
 
         .profile-pic {
             width: 100%;
             border-radius: 50%;
             border: 4px solid var(--primaryColor);
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.5); /* Aqua shadow */
-            aspect-ratio: 1 / 1; 
-            object-fit: cover; 
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+            /* Aqua shadow */
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
         }
-        
-        .expander{
+
+        .expander {
             background: var(--secondaryBackgroundColor);
             padding: 25px;
             border-radius: 8px;
             text-align: left;
         }
-        
+
         /* ✨ NEW styling for the professional summary list */
         .expander ul {
             padding-left: 0;
             list-style: none;
         }
+
         .expander ul li {
             margin-bottom: 12px;
             padding-left: 1.4em;
             text-indent: -1.4em;
         }
+
         .expander ul li strong {
             color: var(--primaryColor);
         }
@@ -173,7 +208,7 @@
             background-color: var(--secondaryBackgroundColor);
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
 
@@ -195,7 +230,8 @@
         }
 
         .contact-button {
-            background-color: #364B60; /* Darker blue-gray button */
+            background-color: #364B60;
+            /* Darker blue-gray button */
             color: white !important;
             padding: 10px 20px;
             border-radius: 8px;
@@ -211,9 +247,11 @@
             border-color: var(--primaryColor);
             transform: translateY(-3px);
         }
-        
+
         /* Item Cards */
-        .experience-item, .education-item, .project-item {
+        .experience-item,
+        .education-item,
+        .project-item {
             margin-bottom: 20px;
             background: var(--secondaryBackgroundColor);
             padding: 20px;
@@ -221,17 +259,20 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .experience-item:hover, .education-item:hover, .project-item:hover {
+        .experience-item:hover,
+        .education-item:hover,
+        .project-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* Certification Grid */
-        .cert-grid{
+        .cert-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
+
         .cert-item {
             border-left: 4px solid var(--primaryColor);
             padding: 20px;
@@ -239,20 +280,22 @@
             border-radius: 8px;
             transition: transform 0.2s ease-in-out;
         }
+
         .cert-item:hover {
             transform: translateY(-5px);
         }
-        .cert-item button{
-             background:var(--primaryColor);
-             color: var(--backgroundColor);
-             padding:8px 15px;
-             border:none;
-             border-radius:5px;
-             cursor: pointer;
-             font-weight: bold;
-             margin-top: 10px;
+
+        .cert-item button {
+            background: var(--primaryColor);
+            color: var(--backgroundColor);
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
         }
-        
+
         /* Skills Layout */
         .skills-layout {
             display: grid;
@@ -260,8 +303,10 @@
             gap: 30px;
         }
 
-        .skills-col { width: 100%; }
-        
+        .skills-col {
+            width: 100%;
+        }
+
         .stars {
             --percent: calc(var(--rating) / 5 * 100%);
             display: inline-block;
@@ -269,17 +314,25 @@
             font-family: Times, 'Times New Roman', serif;
             line-height: 1;
         }
+
         .stars::before {
             content: '★★★★★';
             letter-spacing: 3px;
-            background: linear-gradient(90deg, #FFC107 var(--percent), #4D637A var(--percent)); /* Gold & darker blue-gray stars */
+            background: linear-gradient(90deg, #FFC107 var(--percent), #4D637A var(--percent));
+            /* Gold & darker blue-gray stars */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         /* Links */
-        a { color: var(--primaryColor); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        a {
+            color: var(--primaryColor);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
 
         /* Responsive Design */
         @media (max-width: 820px) {
@@ -295,26 +348,60 @@
                 transition: 0.3s;
                 box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
             }
-            .nav-links.active { left: 0; }
-            .nav-links li { padding: 1rem 0; border-bottom: 1px solid #364B60; }
-            .nav-links li:last-child { border-bottom: none; }
-            .hamburger { display: block; }
-            .hamburger.active .bar:nth-child(2) { opacity: 0; }
-            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 1rem 0;
+                border-bottom: 1px solid #364B60;
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
         }
-        
+
         @media (min-width: 600px) {
-            .skills-layout { grid-template-columns: repeat(2, 1fr); }
+            .skills-layout {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
-        
+
         @media (min-width: 768px) {
-            .content { padding: 100px 40px 40px; }
-            .home-layout { flex-direction: row; text-align: left; }
-            .skills-layout { grid-template-columns: repeat(3, 1fr); }
+            .content {
+                padding: 100px 40px 40px;
+            }
+
+            .home-layout {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .skills-layout {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-container">
@@ -338,79 +425,275 @@
 
     <main class="content">
         <section id="home" class="page-section">
+
             <div class="home-layout">
+
                 <div class="home-col1">
                     <img src="my photo.jpeg" alt="Hari Prashanth R" class="profile-pic">
                 </div>
+
                 <div class="home-col2">
-                    <h1>I'm Hari Prashanth</h1>
-                    <p><strong>Software Engineering Student | Java & Cloud Enthusiast</strong></p>
+
+                    <h1>Hari Prashanth R</h1>
+
                     <p>
-                        A detail-oriented engineering student passionate about building scalable, efficient software solutions and solving complex problems with code. 
-                        My ambition is to grow into a technical leadership role, designing and architecting robust, cloud-native systems using Java and AWS.
+                        <strong>
+                            Software Engineer | Java Full Stack Developer |
+                            AI & Cloud Enthusiast
+                        </strong>
                     </p>
+
+                    <p>
+                        Aspiring Software Engineer with expertise in
+                        Java, Spring Boot, Angular, REST APIs,
+                        Cloud Computing, AI Engineering, and
+                        Data Engineering.
+
+                        Passionate about building scalable applications,
+                        AI-powered solutions, cloud-native systems,
+                        and solving real-world problems through technology.
+                    </p>
+
+                    <div class="button-wrapper">
+
+                        <a href="Hari_Prashanth_Resume.pdf" download class="contact-button">
+                            Download Resume
+                        </a>
+
+                        <a href="https://github.com/Prashanth-HP" target="_blank" class="contact-button">
+                            GitHub
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/haripr/" target="_blank" class="contact-button">
+                            LinkedIn
+                        </a>
+
+                    </div>
+
                 </div>
-                </div>
+
+            </div>
+
             <div class="expander">
+
                 <h3>Professional Summary</h3>
+
                 <ul>
+
                     <li>
-                        <strong>Education:</strong> Pursuing a B.Tech in Artificial Intelligence & Machine Learning with a focus on core software development principles.
+                        🎓 Pursuing B.Tech in Artificial Intelligence &
+                        Machine Learning at K. Ramakrishnan College of
+                        Engineering.
                     </li>
+
                     <li>
-                        <strong>Experience:</strong> Gained practical problem-solving skills through virtual internships with Infosys Springboard and Edunet Foundation, working on data-centric and deep learning projects.
+                        💻 Strong foundation in Java, Spring Boot,
+                        Angular, Data Structures & Algorithms,
+                        OOP, DBMS, Operating Systems and
+                        Computer Networks.
                     </li>
+
                     <li>
-                        <strong>Key Interests:</strong> Cloud Computing (AWS, Azure), Java Devlopment
+                        ☁️ Hands-on experience with AWS, Azure,
+                        Docker, REST APIs and modern
+                        cloud-native application development.
                     </li>
+
+                    <li>
+                        🤖 Working on AI-powered applications using
+                        LLMs, RAG, LangChain, LangGraph,
+                        Knowledge Graphs and Vector Databases.
+                    </li>
+
+                    <li>
+                        📊 Experience in Data Engineering using
+                        Azure Data Factory, Azure Databricks,
+                        Azure Data Lake and Power BI.
+                    </li>
+
+                    <li>
+                        🏆 AWS Certified Cloud Practitioner &
+                        Microsoft Azure Fundamentals Certified.
+                    </li>
+
                 </ul>
-                </div>
+
+            </div>
+
         </section>
 
         <section id="experience" class="page-section">
+
             <h2>Internship Experience</h2>
+
+            <!-- Matrimony Internship -->
+
             <div class="experience-item">
-                <h3>Full Stack (Skill Development-Virtual) - Matrimony.com</h3>
-                <p><strong>Duration</strong>: Dec 2024 - May 2024</p>
-                <p><strong>Project</strong>: Food Delivery Management</p>
-                <p><strong>Tasks:</strong></p>
+
+                <h3>Full Stack Intern (Virtual) – Matrimony.com</h3>
+
+                <p>
+                    <strong>Duration:</strong>
+                    Dec 2024 – Apr 2025
+                </p>
+
+                <p>
+                    <strong>Project:</strong>
+                    Food Delivery Management System
+                </p>
+
                 <ul>
-                    <li>Developed a full-stack Food Delivery System using Angular, Node.js (Express), and MySQL.</li>
-                    <li>Designed and implemented RESTful APIs for menu, cart, and order management with secure authentication and optimized database
- operations.</li>
-                    <li>Ensured modular backend architecture and efficient API performance, improving data handling and scalability.</li>
-                    <li> Integrated frontend and backend for seamless real-time order tracking and cart management features.</li>
+
+                    <li>
+                        Developed a full-stack Food Delivery Application
+                        using Angular, Node.js, Express.js and MySQL.
+                    </li>
+
+                    <li>
+                        Designed and implemented secure REST APIs for
+                        menu, cart and order management.
+                    </li>
+
+                    <li>
+                        Built authentication and authorization mechanisms
+                        for secure user access.
+                    </li>
+
+                    <li>
+                        Followed modular backend architecture to improve
+                        maintainability and scalability.
+                    </li>
+
+                    <li>
+                        Integrated frontend and backend modules for
+                        real-time order tracking and updates.
+                    </li>
 
                 </ul>
-                <p><strong>Tools Used:</strong>AngularJS, TypeScript, MEAN(MySQL, EXPRESSJS, ANGULARJS, NODEJS)</p>
-                <a href="FULLSTACK Certificate.jpg" target="_blank">View Certificate</a>
+
+                <p>
+                    <strong>Technologies:</strong>
+                    Angular, TypeScript, Node.js, Express.js,
+                    REST APIs, MySQL
+                </p>
+
+                <a href="FULLSTACK Certificate.jpg" target="_blank">
+                    View Certificate
+                </a>
+
             </div>
+
+
+            <!-- Edunet Internship -->
+
             <div class="experience-item">
-                <h3>Green AI Intern (Virtual) - Edunet Foundation</h3>
-                <p><strong>Duration</strong>: Apr 2025 - Apr 2025</p>
-                <p><strong>Project</strong>: Forest Fire Detection Using Deep learning</p>
-                <p><strong>Tasks:</strong></p>
+
+                <h3>Green AI Intern (Virtual) – Edunet Foundation</h3>
+
+                <p>
+                    <strong>Duration:</strong>
+                    Apr 2025
+                </p>
+
+                <p>
+                    <strong>Project:</strong>
+                    Forest Fire Detection Using Deep Learning
+                </p>
+
                 <ul>
-                    <li>Built deep learning models for forest fire detection using CNNs.</li>
-                    <li>Focused on dataset preprocessing and PyTorch implementation.</li>
+
+                    <li>
+                        Developed a Convolutional Neural Network (CNN)
+                        model for wildfire image detection.
+                    </li>
+
+                    <li>
+                        Performed image preprocessing and augmentation
+                        to improve model accuracy.
+                    </li>
+
+                    <li>
+                        Trained and optimized TensorFlow/Keras models
+                        achieving more than 90% training accuracy.
+                    </li>
+
+                    <li>
+                        Evaluated model performance using accuracy and
+                        loss visualization techniques.
+                    </li>
+
                 </ul>
-                <p><strong>Tools Used:</strong> Python, Google Colab, MS Excel</p>
-                <a href="Green AI Intern.jpeg" target="_blank">View Certificate</a>
+
+                <p>
+                    <strong>Technologies:</strong>
+                    Python, TensorFlow, Keras,
+                    Google Colab, NumPy, Matplotlib
+                </p>
+
+                <a href="Green AI Intern.jpeg" target="_blank">
+                    View Certificate
+                </a>
+
             </div>
+
+
+            <!-- Infosys Internship -->
+
             <div class="experience-item">
-                <h3>Data Visualization Internship (Virtual) - Infosys SpringBoard</h3>
-                <p><strong>Duration</strong>: Oct 2024 - Dec 2024</p>
-                <p><strong>Project</strong>: Air Quality Index (India)</p>
-                <p><strong>Tasks:</strong></p>
+
+                <h3>Data Visualization Intern (Virtual) – Infosys Springboard</h3>
+
+                <p>
+                    <strong>Duration:</strong>
+                    Oct 2024 – Dec 2024
+                </p>
+
+                <p>
+                    <strong>Project:</strong>
+                    Air Quality Index Analysis (India)
+                </p>
+
                 <ul>
-                    <li>Data Collection, Preprocessing, and Transformation.</li>
-                    <li>Created Power BI dashboards using cleaned datasets.</li>
-                    <li>Integrated Streamlit with a functional Power BI dashboard.</li>
+
+                    <li>
+                        Collected, cleaned and transformed air quality
+                        datasets using Python and Pandas.
+                    </li>
+
+                    <li>
+                        Created interactive Power BI dashboards to
+                        analyze pollution trends across cities.
+                    </li>
+
+                    <li>
+                        Developed a chatbot using fuzzy matching and
+                        integrated it into a Streamlit application.
+                    </li>
+
+                    <li>
+                        Generated automated PDF reports for data-driven
+                        insights and visualization.
+                    </li>
+
+                    <li>
+                        Improved accessibility of analytics through
+                        user-friendly dashboards and reports.
+                    </li>
+
                 </ul>
-                <p><strong>Tools Used:</strong> Python, Streamlit, VS Code, Power BI, MS Excel, MS Word</p>
-                <a href="Infosys Internship Certificate.png" target="_blank">View Certificate</a>
+
+                <p>
+                    <strong>Technologies:</strong>
+                    Python, Pandas, Streamlit,
+                    Power BI, Excel, VS Code
+                </p>
+
+                <a href="Infosys Internship Certificate.png" target="_blank">
+                    View Certificate
+                </a>
+
             </div>
-            
+
         </section>
 
         <section id="education" class="page-section">
@@ -418,7 +701,7 @@
             <div class="education-item">
                 <h3><strong>B.Tech in Artificial Intelligence & Machine Learning</strong></h3>
                 <p><strong>Institution</strong>: K Ramakrishnan College of Engineering, Tiruchirappalli</p>
-                <p><strong>Duration</strong>: 2022 - Present</p>
+                <p><strong>Duration</strong>: 2022 - 2026 (COMPLETED)</p>
             </div>
             <div class="education-item">
                 <h3><strong>12th Grade (PCM)</strong></h3>
@@ -433,82 +716,512 @@
         </section>
 
         <section id="projects" class="page-section">
-            <h2>My Projects</h2>
+
+            <h2>Projects</h2>
+
+            <!-- AI Memory Mirror -->
+
             <div class="project-item">
-                <h3>India's Air Quality Webpage embedded</h3>
-                <p><strong>Description</strong>: Analyzed air quality in Indian cities, providing insights into pollution levels, trends, and potential environmental impacts.</p>
-                <p><strong>Tools</strong>: Python, Excel, PowerBI, Streamlit</p>
-                <a href="https://github.com/Prashanth-HP/Air-Quality-India" target="_blank">GitHub Repository</a>
+
+                <h3>AI Memory Mirror (In Progress)</h3>
+
+                <p>
+                    AI-powered personal knowledge assistant built using
+                    Retrieval-Augmented Generation (RAG), Knowledge Graphs,
+                    Semantic Search and Spring Boot Microservices.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Developed Spring Boot microservices for authentication,
+                        document processing, chat history and learning analytics.
+                    </li>
+
+                    <li>
+                        Implemented PDF parsing, chunking, embeddings and
+                        vector-based retrieval for contextual question answering.
+                    </li>
+
+                    <li>
+                        Integrated Neo4j Knowledge Graph for relationship-based
+                        information retrieval.
+                    </li>
+
+                    <li>
+                        Built learning analytics dashboard for interview
+                        readiness tracking and skill-gap analysis.
+                    </li>
+
+                    <li>
+                        Developing Angular frontend for real-time AI chat,
+                        learning timeline and progress visualization.
+                    </li>
+
+                </ul>
+
+                <p>
+                    <strong>Tech Stack:</strong>
+                    Java, Spring Boot, Angular, Neo4j,
+                    LangChain, RAG, Vector Databases,
+                    Docker, REST APIs
+                </p>
+
+                <a href="#" target="_blank">
+                    GitHub Repository (Coming Soon)
+                </a>
+
             </div>
+
+
+            <!-- Government Scheme Advisor -->
+
             <div class="project-item">
-                <h3>Food Delivery System</h3>
-                <p><strong>Description</strong>: A full-stack food ordering system using Angular, Node.js (Express), and MySQL. Focused on modular backend design and efficient data handling.</p>
-                <p><strong>Tools</strong>: Angular, Node.js (Express), MySQL</p>
-                <a href="https://github.com/Prashanth-HP/Food_Delivery" target="_blank">GitHub Repository</a>
+
+                <h3>AI Government Scheme Advisor</h3>
+
+                <p>
+                    Intelligent chatbot that helps users discover and
+                    understand government schemes using LLMs and
+                    Retrieval-Augmented Generation (RAG).
+                </p>
+
+                <ul>
+
+                    <li>
+                        Built an LLM + RAG architecture to answer
+                        user queries accurately.
+                    </li>
+
+                    <li>
+                        Implemented document retrieval pipelines
+                        for contextual information fetching.
+                    </li>
+
+                    <li>
+                        Designed prompt engineering workflows
+                        to improve response quality.
+                    </li>
+
+                    <li>
+                        Developed an interactive Streamlit UI
+                        for real-time conversations.
+                    </li>
+
+                    <li>
+                        Improved relevance through contextual
+                        response generation techniques.
+                    </li>
+
+                </ul>
+
+                <p>
+                    <strong>Tech Stack:</strong>
+                    Python, LLMs, RAG, Streamlit,
+                    Vector Search, Prompt Engineering
+                </p>
+
+                <a href="#" target="_blank">
+                    GitHub Repository
+                </a>
+
             </div>
+
+
+            <!-- Olympic Analytics -->
+
             <div class="project-item">
-                <h3>Forest Fire Detection using Deep Learning (CNN)</h3>
-                <p><strong>Description</strong>: Designed a deep learning model to classify and detect forest fire images using Convolutional Neural Networks (CNN).</p>
-                <p><strong>Tools</strong>: Python, TensorFlow, Keras, NumPy, Matplotlib</p>
-                <a href="https://github.com/Prashanth-HP/Forest_Fire_Detection" target="_blank">GitHub Repository</a>
+
+                <h3>Olympic Analytics (Azure Data Engineering)</h3>
+
+                <p>
+                    Cloud-based data engineering solution designed
+                    for processing, transforming and analyzing
+                    Olympic datasets at scale.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Designed and implemented ETL pipelines
+                        using Azure Data Factory.
+                    </li>
+
+                    <li>
+                        Processed and transformed data using
+                        Azure Databricks.
+                    </li>
+
+                    <li>
+                        Stored and managed datasets in
+                        Azure Data Lake.
+                    </li>
+
+                    <li>
+                        Optimized workflows for performance,
+                        reliability and scalability.
+                    </li>
+
+                    <li>
+                        Built an end-to-end modern
+                        cloud data engineering pipeline.
+                    </li>
+
+                </ul>
+
+                <p>
+                    <strong>Tech Stack:</strong>
+                    Azure Data Factory, Azure Databricks,
+                    Azure Data Lake, Python, ETL Pipelines
+                </p>
+
+                <a href="#" target="_blank">
+                    GitHub Repository
+                </a>
+
             </div>
+
         </section>
-        
+
         <section id="skills" class="page-section">
-            <h2>My Skills & Tools</h2>
+
+            <h2>Skills & Technologies</h2>
+
             <div class="skills-layout">
+
+                <!-- Programming -->
+
                 <div class="skills-col">
-                    <h3>Technical Skills</h3>
-                    <p><strong>AWS Cloud</strong>: <span class="stars" style="--rating: 3;"></span></p>
-                    <p><strong>Azure Cloud Basics</strong>: <span class="stars" style="--rating: 3;"></span></p>
-                    <p><strong>Data Analysis</strong>: <span class="stars" style="--rating: 3;"></span></p>
-                    <p><strong>Python</strong>: <span class="stars" style="--rating: 3;"></span></p>
-                    <p><strong>SQL</strong>: <span class="stars" style="--rating: 2;"></span></p>
-                    <p><strong>Java Programming</strong>: <span class="stars" style="--rating: 3.5;"></span></p>
-                    <p><strong>Data Visualization</strong>: <span class="stars" style="--rating: 3;"></span></p>
+
+                    <h3>Programming</h3>
+
+                    <p><strong>Java</strong> :
+                        <span class="stars" style="--rating:4.5;"></span>
+                    </p>
+
+                    <p><strong>Python</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>TypeScript</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
                 </div>
+
+                <!-- Frontend -->
+
                 <div class="skills-col">
-                    <h3>Soft Skills</h3>
-                    <p><strong>Public Speaking</strong>: <span class="stars" style="--rating: 3;"></span></p>
-                    <p><strong>Presentation Skills</strong>: <span class="stars" style="--rating: 3;"></span></p>
-                    <p><strong>Teamwork & Collaboration</strong>: <span class="stars" style="--rating: 4;"></span></p>
-                    <p><strong>Time Management</strong>: <span class="stars" style="--rating: 5;"></span></p>
-                    <p><strong>Adaptability</strong>: <span class="stars" style="--rating: 4;"></span></p>
+
+                    <h3>Frontend Development</h3>
+
+                    <p><strong>Angular</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>Bootstrap</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>HTML & CSS</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
                 </div>
+
+                <!-- Backend -->
+
                 <div class="skills-col">
-                    <h3>Tools & Platforms</h3>
-                    <p><strong>Visual Studio Code</strong>: <span class="stars" style="--rating: 4;"></span></p>
-                    <p><strong>Power BI</strong>: <span class="stars" style="--rating: 3;"></span></p>
-                    <p><strong>Google Colab & Jupyter</strong>: <span class="stars" style="--rating: 4;"></span></p>
-                    <p><strong>Azure Cloud</strong>: <span class="stars" style="--rating: 3;"></span></p>
-                    <p><strong>Microsoft Office</strong>: <span class="stars" style="--rating: 3;"></span></p>
-                    <p><strong>GitHub</strong>: <span class="stars" style="--rating: 3;"></span></p>
+
+                    <h3>Backend Development</h3>
+
+                    <p><strong>Spring Boot</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>Spring Security</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>JWT Authentication</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>Hibernate / JPA</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>Node.js</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>REST APIs</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
                 </div>
+
+                <!-- Database -->
+
+                <div class="skills-col">
+
+                    <h3>Database</h3>
+
+                    <p><strong>MySQL</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>PostgreSQL</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>Neo4j</strong> :
+                        <span class="stars" style="--rating:3;"></span>
+                    </p>
+
+                    <p><strong>Database Design</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                </div>
+
+                <!-- AI -->
+
+                <div class="skills-col">
+
+                    <h3>AI Engineering</h3>
+
+                    <p><strong>LLMs</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>RAG</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>LangChain</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>LangGraph</strong> :
+                        <span class="stars" style="--rating:3;"></span>
+                    </p>
+
+                    <p><strong>Knowledge Graphs</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>Vector Databases</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                </div>
+
+                <!-- Cloud -->
+
+                <div class="skills-col">
+
+                    <h3>Cloud & DevOps</h3>
+
+                    <p><strong>AWS</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>Azure</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>Docker</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>Git</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>GitHub</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                </div>
+
+                <!-- Data Engineering -->
+
+                <div class="skills-col">
+
+                    <h3>Data Engineering</h3>
+
+                    <p><strong>Azure Data Factory</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>Azure Databricks</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>Azure Data Lake</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>Power BI</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>ETL Pipelines</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                </div>
+
+                <!-- Core CS -->
+
+                <div class="skills-col">
+
+                    <h3>Core Computer Science</h3>
+
+                    <p><strong>Data Structures & Algorithms</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>Object Oriented Programming</strong> :
+                        <span class="stars" style="--rating:4.5;"></span>
+                    </p>
+
+                    <p><strong>DBMS</strong> :
+                        <span class="stars" style="--rating:4;"></span>
+                    </p>
+
+                    <p><strong>Operating Systems</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                    <p><strong>Computer Networks</strong> :
+                        <span class="stars" style="--rating:3.5;"></span>
+                    </p>
+
+                </div>
+
             </div>
+
         </section>
 
         <section id="certification" class="page-section">
+
             <h2>Certifications</h2>
+
             <div class="cert-grid">
-                <div class="cert-item"><h5>Programming Using Java</h5><p><strong>Platform:</strong> Infosys Springboard</p><a href="Java Ceritification.jpeg" target="_blank"><button>View Certificate</button></a></div>
-                <div class="cert-item"><h5>Database Management System</h5><p><strong>Platform:</strong> Infosys Springboard</p><a href="DBMS cetificate.jpeg" target="_blank"><button>View Certificate</button></a></div>
-                <div class="cert-item"><h5>AZURE FUNDAMENTALS</h5><p><strong>Platform:</strong> Microsoft</p><a href="Azure.pdf" target="_blank"><button>View Certificate</button></a></div>
-                <div class="cert-item"><h5>AWS CLOUD CERTIFICATE</h5><p><strong>Platform:</strong> AWS</p><a href="AWS Certification.png" target="_blank"><button>View Certificate</button></a></div>
-                <div class="cert-item"><h5>Python Programming</h5><p><strong>Platform:</strong> AWS</p><a href="python(guvi).png" target="_blank"><button>View Certificate</button></a></div>
+
+                <div class="cert-item">
+                    <h4>AWS Certified Cloud Practitioner</h4>
+                    <p>
+                        <strong>Issued By:</strong>
+                        Amazon Web Services (AWS)
+                    </p>
+                    <a href="AWS Certification.png" target="_blank">
+                        <button>View Certificate</button>
+                    </a>
+                </div>
+
+                <div class="cert-item">
+                    <h4>Microsoft Azure Fundamentals (AZ-900)</h4>
+                    <p>
+                        <strong>Issued By:</strong>
+                        Microsoft
+                    </p>
+                    <a href="Azure.pdf" target="_blank">
+                        <button>View Certificate</button>
+                    </a>
+                </div>
+
+                <div class="cert-item">
+                    <h4>Programming Using Java</h4>
+                    <p>
+                        <strong>Issued By:</strong>
+                        Infosys Springboard
+                    </p>
+                    <a href="Java Ceritification.jpeg" target="_blank">
+                        <button>View Certificate</button>
+                    </a>
+                </div>
+
+                <div class="cert-item">
+                    <h4>Database Management Systems (SQL)</h4>
+                    <p>
+                        <strong>Issued By:</strong>
+                        Infosys Springboard
+                    </p>
+                    <a href="DBMS cetificate.jpeg" target="_blank">
+                        <button>View Certificate</button>
+                    </a>
+                </div>
+
+                <div class="cert-item">
+                    <h4>Python Programming</h4>
+                    <p>
+                        <strong>Issued By:</strong>
+                        GUVI
+                    </p>
+                    <a href="python(guvi).png" target="_blank">
+                        <button>View Certificate</button>
+                    </a>
+                </div>
             </div>
-            </div>
+
         </section>
 
         <section id="contact" class="page-section">
-             <div class="contact-box">
-                <div class="contact-title">Get In Touch</div>
-                <div class="button-wrapper">
-                    <a href="mailto:gowthamhari2103@gmail.com" class="contact-button">Email Me</a>
-                    <a href="https://www.linkedin.com/in/haripr/" target="_blank" class="contact-button">LinkedIn</a>
-                    <a href="https://github.com/Prashanth-HP" target="_blank" class="contact-button">GitHub</a>
-                     <a href="https://www.geeksforgeeks.org/user/gowthamh2eda/" target="_blank" class="contact-button">GFG</a>
+
+            <div class="contact-box">
+
+                <div class="contact-title">
+                    Let's Connect
                 </div>
+
+                <p>
+                    I'm actively looking for Software Engineer,
+                    Java Developer, Full Stack Developer,
+                    AI Engineer and Cloud Engineering opportunities.
+                </p>
+
+                <div class="button-wrapper">
+
+                    <a href="mailto:gowthamhari2103@gmail.com" class="contact-button">
+                        📧 Email
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/haripr/" target="_blank" class="contact-button">
+                        💼 LinkedIn
+                    </a>
+
+                    <a href="https://github.com/Prashanth-HP" target="_blank" class="contact-button">
+                        💻 GitHub
+                    </a>
+
+                    <a href="https://www.geeksforgeeks.org/user/gowthamh2eda/" target="_blank" class="contact-button">
+                        🚀 GeeksforGeeks
+                    </a>
+
+
+                </div>
+
+                <a href="Hari_Prashanth_Resume.pdf" download class="download-btn">
+                    📄 Download Resume
+                </a>
+
+                <br><br>
+
+                <p>
+                    <strong>Location:</strong>
+                    Tiruchirappalli, Tamil Nadu, India
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    gowthamhari2103@gmail.com
+                </p>
+
             </div>
+
         </section>
     </main>
 
@@ -530,10 +1243,10 @@
         const navLi = document.querySelectorAll(".nav-links a");
 
         window.addEventListener("scroll", () => {
-            let current = "home"; 
+            let current = "home";
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) { 
+                if (pageYOffset >= sectionTop - 150) {
                     current = section.getAttribute("id");
                 }
             });
@@ -547,4 +1260,5 @@
         });
     </script>
 </body>
+
 </html>
